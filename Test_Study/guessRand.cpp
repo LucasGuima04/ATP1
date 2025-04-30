@@ -26,5 +26,7 @@ int main() {
         }
     }
     printf("Parabens! Voce acertou.\nO numero era %d",numero);
+
+    getchar();
     return 0;
 }

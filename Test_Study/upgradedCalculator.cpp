@@ -62,5 +62,7 @@ int main(){
     //Fim do codigo
     printf("Calculadora Finalizada!\n");
     scanf("%c",&c);
+    
+    getchar();
     return 0;
 }

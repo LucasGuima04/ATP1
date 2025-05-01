@@ -17,13 +17,13 @@ int main(){
             scanf("%d",&num2);
         }
             //modelo da calculadora para pedir as operacoes
-            printf("(0)Novos numeros \n");
-            printf("(1)Soma \n");
-            printf("(2)Subtracao \n");
-            printf("(3)Multiplicacao \n");
-            printf("(4)Divisao \n");
-            printf("(9)Finalizar:\n");
-            printf("Digite: ");
+            printf("(0)Novos numeros \n"
+            "(1)Soma \n"
+            "(2)Subtracao \n"
+            "(3)Multiplicacao \n"
+            "(4)Divisao \n"
+            "(9)Finalizar:\n"
+            "Digite: ");
             scanf("%d", &opcao);
             printf(" \n");
         

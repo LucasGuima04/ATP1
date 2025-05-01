@@ -15,16 +15,7 @@ int main(){
             scanf("%d",&num1);
             printf("Numero 2: ");
             scanf("%d",&num2);
-            //modelo da calculadora para pedir as operacoes
-            printf("(0)Novos numeros \n");
-            printf("(1)Soma \n");
-            printf("(2)Subtracao \n");
-            printf("(3)Multiplicacao \n");
-            printf("(4)Divisao \n");
-            printf("(9)Finalizar:\n");
-            printf("Digite: ");
-            scanf("%d", &opcao);
-        }else{
+        }
             //modelo da calculadora para pedir as operacoes
             printf("(0)Novos numeros \n");
             printf("(1)Soma \n");
@@ -35,7 +26,7 @@ int main(){
             printf("Digite: ");
             scanf("%d", &opcao);
             printf(" \n");
-        }
+        
             //Condicionais para operacoes dos numeros
             if(opcao == 1){
                 result = num1 + num2;

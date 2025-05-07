@@ -11,9 +11,8 @@ int main(){
         printf("Digite (-1) para finalizar!\n");
         printf("Quantos Litros foram abastecidos: ");
         scanf("%f",&litros);
-        if(litros == -1){
+        if(litros == -1)
             break;
-        }
         printf("Quantos kilometros foram rodados: ");
         scanf("%f",&kilometros);
 

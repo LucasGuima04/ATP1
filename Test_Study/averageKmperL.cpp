@@ -20,10 +20,10 @@ int main(){
         soma += consumoAtual;
         consumoGeral = soma/counter;
 
-        printf("O consumo atual foi de: %.2f\n",consumoAtual);
+        printf("O consumo atual foi de: %.2f km/L\n",consumoAtual);
         counter++;
     }
-    printf("O consumo geral foi de: %.2f\n",consumoGeral);
+    printf("O consumo geral foi de: %.2f km/L\n",consumoGeral);
 
     getchar();
     return 0;

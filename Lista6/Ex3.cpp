@@ -13,6 +13,8 @@ int quantidadeDigitos(int inteiro){
 }
 
 int main(){
-    int num = 10240;
+    int num = 1024;
     printf("A quantidade de algarismo: %d",quantidadeDigitos(num));
+    getchar();
+    return 0;
 }

@@ -12,4 +12,6 @@ int soma(int n){
 int main(){
     int num = 5;
     printf("%d",soma(num));
+    getchar();
+    return 0;
 }

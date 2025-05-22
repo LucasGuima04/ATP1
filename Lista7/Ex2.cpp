@@ -5,11 +5,11 @@ int main(){
     int A[5];
     int B[5];
 
-    printf("Digite 5 numeros: \n");
+    printf("Digite 5 numeros para formar a primeira lista: \n");
     for (int i = 0; i < 5; i++)
         scanf("%d",&A[i]);
     
-    printf("Digite mais 5 numeros: \n");
+    printf("Digite mais 5 numeros para formar a segunda lista: \n");
     for (int i = 0; i < 5; i++)
         scanf("%d",&B[i]);
 

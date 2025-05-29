@@ -4,11 +4,16 @@
 int main(){
     int*vetor = NULL;
     int size;
-    printf("Qual a tamanho desejado da array: ");
+    printf("Qual a tamanho desejado do vetor: ");
     scanf("%d",&size);
 
     vetor = (int*) calloc(size,sizeof(int));
-    printf("Digite os valores da array: \n");
+    if (vetor == NULL){
+        printf("Erro na alocacao de memoria!\n"); //Verificação de espaço de memoria
+        return 1;
+    }
+
+    printf("Digite os valores do vetor: \n");
     for (int i = 0; i < size; i++)
         scanf("%d",&vetor[i]);
 

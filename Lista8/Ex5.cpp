@@ -17,5 +17,7 @@ int main(){
         printf("\n");
         j = 0;
     }
-    
+    free(matriz);
+    getchar();
+    return 0;
 }

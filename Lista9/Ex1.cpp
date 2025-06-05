@@ -9,14 +9,14 @@ int **alocarMatriz(int linhas, int colunas){
     int **matriz = NULL;
     matriz = (int**)malloc(linhas * sizeof(int*));
     if (matriz == NULL){
-            printf("Erro de alocação!");
+            printf("Erro de alocacao!");
             return NULL;
         }
         
     for (int i = 0;i < linhas;i++) {
         matriz[i] = (int*)malloc(colunas*sizeof(int));
         if(matriz[i]==NULL){
-            printf("Erro de alocação!");
+            printf("Erro de alocacao!");
             return NULL;
         }}
     return matriz;
@@ -45,7 +45,7 @@ void somarMatrizes(int **matrizA, int **matrizB, int **matrizResultado, int linh
 void imprimirMatriz(int **matriz, int linhas, int colunas) {
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
-            printf("%d\t", matriz[i][j]);
+            printf("%d ", matriz[i][j]);
         }
         printf("\n");
     }
@@ -61,7 +61,7 @@ int main() {
 
     // Verificar se a alocação foi bem-sucedida
     if (matriz1 == NULL || matriz2 == NULL || resultado == NULL) {
-        printf("Falha ao alocar memória para uma ou mais matrizes. Saindo.\n");
+        printf("Falha ao alocar memoria para uma ou mais matrizes. Saindo.\n");
         // Liberar o que pode ter sido alocado antes da falha
         liberarMatriz(matriz1, LINHAS);
         liberarMatriz(matriz2, LINHAS);
@@ -109,7 +109,7 @@ int main() {
     liberarMatriz(matriz2, LINHAS);
     liberarMatriz(resultado, LINHAS);
 
-    printf("\nMemória das matrizes liberada com sucesso.\n");
+    printf("\nMemoria das matrizes liberada com sucesso.\n");
 
     return 0;
 }

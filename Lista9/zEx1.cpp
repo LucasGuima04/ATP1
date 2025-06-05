@@ -54,41 +54,32 @@ void imprimirMatriz(int **matriz, int linhas, int colunas) {
 int main() {
     int **matriz1, **matriz2, **resultado;
 
-    // 1. Alocar memória para as matrizes
+    //Alocar memória para as matrizes
     matriz1 = alocarMatriz(LINHAS, COLUNAS);
     matriz2 = alocarMatriz(LINHAS, COLUNAS);
     resultado = alocarMatriz(LINHAS, COLUNAS);
 
-    // Verificar se a alocação foi bem-sucedida
-    if (matriz1 == NULL || matriz2 == NULL || resultado == NULL) {
-        printf("Falha ao alocar memoria para uma ou mais matrizes. Saindo.\n");
-        // Liberar o que pode ter sido alocado antes da falha
-        liberarMatriz(matriz1, LINHAS);
-        liberarMatriz(matriz2, LINHAS);
-        liberarMatriz(resultado, LINHAS);
-        return 1; // Indica erro
-    }
-
-    int valores1[LINHAS][COLUNAS] = {
+    //Matriz 1
+    int matriz1[LINHAS][COLUNAS] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
     for (int i = 0; i < LINHAS; i++) {
         for (int j = 0; j < COLUNAS; j++) {
-            matriz1[i][j] = valores1[i][j];
+            matriz1[i][j] = matriz1[i][j];
         }
     }
 
-    // Matriz 2
-    int valores2[LINHAS][COLUNAS] = {
+    //Matriz 2
+    int matriz2[LINHAS][COLUNAS] = {
         {9, 8, 7},
         {6, 5, 4},
         {3, 2, 1}
     };
     for (int i = 0; i < LINHAS; i++) {
         for (int j = 0; j < COLUNAS; j++) {
-            matriz2[i][j] = valores2[i][j];
+            matriz2[i][j] = matriz2[i][j];
         }
     }
 
@@ -98,13 +89,13 @@ int main() {
     printf("\nMatriz B:\n");
     imprimirMatriz(matriz2, LINHAS, COLUNAS);
 
-    // 3. Somar as matrizes
+    //Somar as matrizes
     somarMatrizes(matriz1, matriz2, resultado, LINHAS, COLUNAS);
 
     printf("\nSoma das Matrizes (A + B):\n");
     imprimirMatriz(resultado, LINHAS, COLUNAS);
 
-    // 4. Liberar a memória alocada
+    //Liberar a memória alocada
     liberarMatriz(matriz1, LINHAS);
     liberarMatriz(matriz2, LINHAS);
     liberarMatriz(resultado, LINHAS);

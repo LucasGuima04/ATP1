@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int **alocar_matriz(int linhas, int colunas){
+int **alocarMatriz(int linhas, int colunas){
     int **matriz = NULL;
     matriz = (int**)malloc(linhas * sizeof(int*));
     if (matriz == NULL){

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int **alocar_matriz(int linhas, int colunas){
+int **alocarMatriz(int linhas, int colunas){
     int **matriz = NULL;
     matriz = (int**)malloc(linhas * sizeof(int*));
     if (matriz == NULL){
@@ -20,12 +20,12 @@ int **alocar_matriz(int linhas, int colunas){
 }
 
 int main(){
-    int size = 8;
-    int **matriz = alocar_matriz(size,size);
+    int size = 5;
+    int **matriz = alocarMatriz(size,size);
 
     for (int i = 0; i < size; i++) {
     for (int j = 0; j < size; j++) 
-    matriz[i][j] = 1;
+    matriz[i][j] = i+j;
     }
 
     for(int i = 0;i < size; i++){

@@ -23,7 +23,7 @@ int main(){
     B = alocarMatriz(3,3);
     matrizResulatado = alocarMatriz(3,3);
 
-    // Dados para preencher A
+    //Dados para preencher A
     int valorA[3][3] = {
         {3, 2, 3},
         {4, 5, 1},
@@ -40,10 +40,10 @@ int main(){
     preencherMatrizComValores(A,valorA,3,3);
     preencherMatrizComValores(B,valorB,3,3);
 
-    //Multiplicar as matrizes
+    //Multiplicar as matrizes AxB -> diferente de BxA
     multiplicarMatrizes(A,B,matrizResulatado,3,3);
 
-    //Imprime a matriz resultado de AxB
+    //Imprime a matriz resultado
     imprimirMatriz(matrizResulatado,3,3);
 
     //Libera matriz 

@@ -9,8 +9,9 @@ int main(){
     char nome_produto[100];
     float soma_total = 0;
     float preco;
-    int qtd;
+    int qtd ;
     char cabecalho[1000];
+    char linha[100];
 
     //Abre o arquivo
     stream_menu = fopen("menu.txt", "r");
@@ -33,23 +34,22 @@ int main(){
         return 1; //Termina o programa com erro
     }
     
-    char linha[100];
+    //Lero arquivo menu.txt linha por linha
+    //Imprime os produtos desejados no boleto.txt
+    fprintf(stream_boleto,"======================= Boleto =======================\n");
+    while(fgets(linha,sizeof(linha),stream_menu) != NULL){
+        int itens = sscanf(linha, "%s %f %d", nome_produto,&preco,&qtd);
 
-    while(fscanf(stream_menu, "%s %f %f", nome_produto, &preco, &qtd) >=2){
-        if(fscanf(stream_menu, "%s %f %f", nome_produto, &preco, &qtd) == 2){
-            fprintf(stream_boleto,"%s %f");
+        if(itens == 3){
+            fprintf(stream_boleto,"Produto: %-10s | Quantitade: %-5d | Total: %.2f\n",nome_produto,qtd,preco*qtd);
+            soma_total += qtd*preco;
         }
     }
-    // 4. O loop principal para ler o arquivo.
-    // A condição do 'while' é a chave para usar fscanf corretamente.
-    // fscanf retorna o número de itens que conseguiu ler com sucesso.
-    // Como nosso formato tem 3 especificadores ("%s %d %lf"), esperamos que o retorno seja 3.
-    //while (fscanf(arquivo, "%s %d %lf", nome_produto, &quantidade, &preco) == 3) {
-        // 5. Se a leitura foi bem-sucedida, imprime os dados na tela para confirmar.
-        //printf("Produto: %-10s | Quantidade: %-5d | Preco: R$ %.2f\n",
-               //nome_produto, quantidade, preco);
-    //}
+    fprintf(stream_boleto,"O valor total da conta: %.2f",soma_total);
+
+    //Fecha os arquivos
     fclose(stream_menu);
-    printf("a");
+    fclose(stream_boleto);
+    printf("Boleto gerado com sucesso!");
     return 0;
 }

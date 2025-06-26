@@ -1,8 +1,0 @@
-Coloque a quantidade a frente dos itens:
-Suco          5.00  
-Refrigerante  4.50  
-Sanduiche     9.70  
-Hamburguer    15.00 
-Coxinha       7.50  
-BoloDeLaranja 12.50 
-Brigadeiro    8.50  

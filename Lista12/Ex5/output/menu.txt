@@ -1,8 +1,8 @@
 Coloque a quantidade a frente dos itens:
-Suco         5.00  1
+Suco         5.00  
 Refri        4.50  1
-Sanduiche    9.70  1
-Hamburguer   15.00 1
-Coxinha      7.50  1
-Bolo         12.50 1
-Brigadeiro   8.50  1
+Sanduiche    9.70  
+Hamburguer   15.00 
+Coxinha      7.50  3
+Bolo         12.50 
+Brigadeiro   8.50  

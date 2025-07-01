@@ -1,9 +1,5 @@
 ======================= Boleto =======================
-Produto: Suco       | Quantitade: 1     | Total: 5.00
-Produto: Refri      | Quantitade: 1     | Total: 4.50
-Produto: Sanduiche  | Quantitade: 1     | Total: 9.70
-Produto: Hamburguer | Quantitade: 1     | Total: 15.00
-Produto: Coxinha    | Quantitade: 1     | Total: 7.50
-Produto: Bolo       | Quantitade: 1     | Total: 12.50
-Produto: Brigadeiro | Quantitade: 1     | Total: 8.50
-O valor total da conta: 62.70
+Produto: Refri      | Quantidade: 1     | Total: R$ 4.50
+Produto: Coxinha    | Quantidade: 3     | Total: R$ 22.50
+======================================================
+O valor total da conta: R$ 27.00

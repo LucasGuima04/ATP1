@@ -23,11 +23,9 @@ Produto inicializar_produto(const char* nome, float preco, int quantidade) {
     return p;
 }
 
-// Inicializa a struct Menu com valores padrão
 void inicializar_menu(Menu* menu) {
-    menu->capacidade = 10; // Começamos com uma capacidade inicial de 10 produtos
+    menu->capacidade = 8; //inicial de produtos
     menu->num_produtos = 0;
-    // Aloca a memória inicial para a nossa lista de produtos
     menu->produtos = (Produto*)calloc(1,menu->capacidade * sizeof(Produto));
     if (menu->produtos == NULL) {
         printf("Erro ao alocar memória para o menu!\n");
@@ -35,28 +33,23 @@ void inicializar_menu(Menu* menu) {
     }
 }
 
-// Adiciona um produto à lista de produtos dentro do menu
 void adicionar_produto_ao_menu(Menu* menu, Produto produto) {
-    // Verifica se a lista está cheia
     if (menu->num_produtos == menu->capacidade) {
         // Se estiver cheia, dobramos a capacidade
         menu->capacidade *= 2;
-        // Realocamos a memória para o novo tamanho
         menu->produtos = (Produto*)realloc(menu->produtos, menu->capacidade * sizeof(Produto));
         if (menu->produtos == NULL) {
             printf("Erro ao realocar memória para o menu!\n");
             exit(1);
         }
     }
-    // Adiciona o novo produto na próxima posição livre e incrementa o contador
     menu->produtos[menu->num_produtos] = produto;
     menu->num_produtos++;
 }
 
-// Libera a memória alocada para a lista de produtos
 void liberar_menu(Menu* menu) {
     free(menu->produtos);
-    menu->produtos = NULL; // Boa prática para evitar ponteiros "soltos"
+    menu->produtos = NULL;
     menu->num_produtos = 0;
     menu->capacidade = 0;
 }
@@ -64,15 +57,13 @@ void liberar_menu(Menu* menu) {
 int main() {
     Menu menu;
     inicializar_menu(&menu);
-
     FILE* stream_menu;
     
-    // --- Bloco 1: Carregar dados do arquivo para as structs ---
     stream_menu = fopen("menu.txt", "r");
     if (stream_menu == NULL) {
         printf("Erro ao abrir o menu.txt.\n");
         printf("Verifique se o arquivo esta na mesma pasta do programa.\n");
-        liberar_menu(&menu); // Libera memória antes de sair
+        liberar_menu(&menu); 
         return 1;
     }
 
@@ -80,7 +71,6 @@ int main() {
     // Ignora a primeira linha (cabeçalho) do arquivo
     fgets(linha, sizeof(linha), stream_menu); 
 
-    // Lê o arquivo linha por linha e preenche nossa struct Menu
     while (fgets(linha, sizeof(linha), stream_menu) != NULL) {
         char nome_temp[100];
         float preco_temp;
@@ -88,9 +78,7 @@ int main() {
 
         // Extrai os dados da linha para variáveis temporárias
         if (sscanf(linha, "%s %f %d", nome_temp, &preco_temp, &qtd_temp) == 3) {
-            // Usa a função para criar uma struct Produto
             Produto p = inicializar_produto(nome_temp, preco_temp, qtd_temp);
-            // Adiciona o produto recém-criado ao nosso menu
             adicionar_produto_ao_menu(&menu, p);
         }
     }
@@ -108,7 +96,6 @@ int main() {
     fprintf(stream_boleto, "======================= Boleto =======================\n");
     float soma_total = 0;
 
-    // Itera sobre a lista de produtos que está dentro da nossa struct Menu
     for (int i = 0; i < menu.num_produtos; i++) {
         Produto p_atual = menu.produtos[i];
         float total_produto = p_atual.preco * p_atual.quantidade;

@@ -14,7 +14,7 @@ int quantidadeDigitos(int inteiro){
 
 int main(){
     int num = 1024;
-    printf("A quantidade de algarismo: %d",quantidadeDigitos(num));
+    printf("A quantidade de algarismos: %d",quantidadeDigitos(num));
     getchar();
     return 0;
 }

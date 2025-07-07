@@ -9,7 +9,7 @@ double arredondar(double numero, int casas) {
 
 int main(int argc, char *argv[]){
     if (argc < 2) {
-        printf("Erro: Forneca dois numeros como argumentos (numero e casas decimais).\n");
+        printf("Erro: Forneca dois numeros(numero e casas decimais).\n");
         printf("Exemplo de uso: 10,2037 2 \n");
         return 1; // Retorna 1 para indicar um erro.
     }

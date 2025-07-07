@@ -34,7 +34,7 @@ int main(){
             j++;
         }
     }
-        if(n%2 ==0 || v[0] % 2 != 0){    //caso o vetor tenha numero par de espaços
+    if(n%2 ==0 || v[0] % 2 != 0){    //caso o vetor tenha numero par de espaços
         for(int i = 0;i<n/2;i++)
             printf("%d ",s[i]);
     } else {    //caso o vetor tenha numero impar de espaços

@@ -10,10 +10,10 @@ int main(){
     scanf("%d", &n);
 
     //Fazendo o fatorial no numero por "for"
-        for(fat = 1; n > 1; n = n - 1){
+        for(fat = 1; n > 1; n--){
             fat = fat * n;
         }
-    printf("O fatorial desse numero = %d", fat);
+    printf("O fatorial de %d = %d",n, fat);
     scanf("%c",&c);
     return 0;
 }

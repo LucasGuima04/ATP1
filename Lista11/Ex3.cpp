@@ -85,7 +85,7 @@ int main() {
     //Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    //Interage com o usuário
+    //Input de numero
     printf("--- Gerador de Cartelas de Bingo ---\n");
     printf("Quantas cartelas voce deseja gerar? ");
     scanf("%d", &num_cartelas);
@@ -109,7 +109,7 @@ int main() {
         imprimirBingo(cartela_atual, stream_saida);
     }
 
-    //Fecha o arquivo e informa sucesso
+    //Fecha o arquivo
     fclose(stream_saida);
     printf("\nSucesso! %d cartelas foram salvas no arquivo '%s'.\n", num_cartelas, nome_arquivo);
 
